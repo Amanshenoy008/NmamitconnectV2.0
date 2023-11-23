@@ -3,14 +3,13 @@ import {getAuth} from "firebase/auth"
 import {getFirestore} from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAk15hbdBDZ_MaqHn2wcCq9VRD2vMK36d0",
-  authDomain: "nmamitclub-final.firebaseapp.com",
-  projectId: "nmamitclub-final",
-  storageBucket: "nmamitclub-final.appspot.com",
-  messagingSenderId: "500536882753",
-  appId: "1:500536882753:web:88a057944a16ce669cf8c0"
+  apiKey: process.env.APIKEY,
+  authDomain: process.env.AUTHDOMAIN,
+  projectId: process.env.PROJECTID,
+  storageBucket: process.env.STORAGEBUCKET,
+  messagingSenderId: process.env.MESSAGINGID,
+  appId: process.env.APPID
 };
-
 
 const app = initializeApp(firebaseConfig);
 

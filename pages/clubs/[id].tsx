@@ -22,6 +22,12 @@ const Club = () => {
         case 'Vista': s='Vista'
         coll = collection(db,s)
         break
+        case 'Tallem': s='Tallem'
+        coll = collection(db,s)
+        break
+        case 'Rachana': s='Rachana'
+        coll = collection(db,s)
+        break
         default: s=''
     }
     console.log(id)
