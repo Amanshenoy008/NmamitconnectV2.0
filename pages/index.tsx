@@ -10,36 +10,14 @@ import { useRouter } from "next/router";
 
 export default function Home() {
   const router = useRouter()
-  const prov = new GoogleAuthProvider();
-  const [displaydata, setdisplaydata] = useState<any[]>([]);
-  const handlec = async () => {
-    await signInWithPopup(auth, prov).then((d) => {
-      console.log(d?.user?.email);
-    });
-  };
-  const coll = collection(db, "AuthorCraft");
-
+  
   useEffect(() => {
-    const getdata = async () => {
-      const fdata = await getDocs(coll);
-      const usefuldata = fdata.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
-      console.log(usefuldata);
-      setdisplaydata(usefuldata);
-    };
-    if (!displaydata.length) {
-      getdata();
-    }
-  });
+    const redirectTimeout = setTimeout(() => {
+      router.push('/clubs/AuthorCraft');
+    }, 10000);
 
-  const handles = async () => {
-    await signOut(auth);
-  };
-  useEffect(()=>{
-    router.push('/clubs/AuthorCraft')
-  },10)
+    return () => clearTimeout(redirectTimeout); 
+  }, [router])
   return (
     <>
       <div className="bg-gray-400 w-screen h-screen overflow-hidden">

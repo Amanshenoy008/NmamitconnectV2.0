@@ -5,6 +5,15 @@ import { collection, getDocs } from "firebase/firestore";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 
+type mytype = {
+  id:number,
+  EventTitle:string,
+  Date:string,
+  Time:string,
+  Venue:string,
+  Description:string
+}
+
 
 const Club = () => {
     const router = useRouter()
@@ -37,13 +46,13 @@ const Club = () => {
         const getdata = async()=>{
             if(coll){
             const d = await getDocs(coll)
-            const fetchedData = d.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+            const fetchedData : mytype[] = d.docs.map((doc:any) => ({ ...doc.data(), id: doc.id }));
             console.log(fetchedData)
             setdisplaydata(fetchedData)
             }
         }
         getdata()
-    },[id])
+    },[id,coll])
 
 
   return (<>
