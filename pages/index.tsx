@@ -20,7 +20,7 @@ export default function Home() {
   }, [router])
   return (
     <>
-      <div className="bg-gray-400 w-screen h-screen overflow-hidden">
+      <div className="bg-gradient-to-r from-blue-800 to-red-800 w-screen h-screen overflow-hidden">
         {<Navbar />}
         {/* <div>
       {

@@ -30,7 +30,7 @@ const Sidebar = () => {
   }
   return (
     <>
-      <div className="w-fill h-fill border-2 rounded-2xl p-5 flex flex-col items-center justify-around bg-black gap-5 mx-2">
+      <div className="w-fill h-fill  rounded-2xl p-5 flex flex-col items-center justify-around bg-black gap-5 mx-2">
         {obj.map(({ name, url }) => (
           <div
             key={name}

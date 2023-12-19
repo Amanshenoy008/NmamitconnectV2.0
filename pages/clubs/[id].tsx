@@ -52,11 +52,11 @@ const Club = () => {
             }
         }
         getdata()
-    },[id,coll])
+    },[id])
 
 
   return (<>
-      <div className="bg-gray-400 w-screen h-screen overflow-hidden">
+      <div className="bg-gradient-to-r from-blue-800 to-red-800 w-screen h-screen overflow-hidden">
         { <Navbar />}     
         <div className="flex flex-row mx-5 mt-5 h-full">
 
